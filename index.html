@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Flip</title>
+
+    <link rel="stylesheet" href="css/style.css"> <!-- Charge les styles de la page -->
+    <script defer src="js/player.js"></script> <!-- Charge d'abord le joueur -->
+    <script defer src="js/obstacles.js"></script> <!-- Puis les obstacles -->
+    <script defer src="js/collision.js"></script> <!-- Puis les collisions (qui utilisent les deux précédents) -->
+    <script defer src="js/ui.js"></script> <!-- Puis l'interface -->
+    <script defer src="js/main.js"></script> <!-- Enfin la boucle principale, qui appelle tout le reste -->
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="400"></canvas> <!-- Zone de dessin 800x400 identifiée par "gameCanvas" -->
+</body>
+</html>
