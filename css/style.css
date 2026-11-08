@@ -1,0 +1,12 @@
+body { /* Style appliqué à toute la page */
+  margin: 0; /* Supprime les marges par défaut du navigateur */
+  height: 100vh; /* La page prend toute la hauteur de la fenêtre */
+  display: flex; /* Active la mise en page flexible pour centrer */
+  justify-content: center; /* Centre le canvas horizontalement */
+  align-items: center; /* Centre le canvas verticalement */
+  background: #222; /* Fond gris foncé autour du jeu */
+} /* Fin du style de body */
+
+canvas { /* Style appliqué au canvas */
+  border: 2px solid white; /* Bordure blanche autour de la zone de jeu */
+} /* Fin du style du canvas */
