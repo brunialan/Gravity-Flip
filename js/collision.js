@@ -1,9 +1,10 @@
 function checkCollisions() { // Renvoie true si le joueur touche un pic
   for (const s of obstacles) { // Teste chaque pic à l'écran
-    const hitX = s.x + 6; // Zone dangereuse un peu plus étroite que le pic (plus indulgent)
-    const hitW = SPIKE_SIZE - 12; // Largeur de la zone dangereuse
-    const hitY = s.side === "floor" ? canvas.height - WALL - SPIKE_SIZE + 10 : WALL; // Haut de la zone dangereuse selon le côté
-    const hitH = SPIKE_SIZE - 10; // Hauteur de la zone dangereuse (la pointe est volontairement tolérante)
+    const margin = s.size * 0.2; // Marge sur les côtés, proportionnelle à la taille du pic (plus indulgent)
+    const hitX = s.x + margin; // Début de la zone dangereuse, un peu à l'intérieur du pic
+    const hitW = s.size - margin * 2; // Largeur de la zone dangereuse
+    const hitH = s.size * 0.67; // Hauteur de la zone dangereuse (la pointe est volontairement tolérante)
+    const hitY = s.side === "floor" ? canvas.height - WALL - hitH : WALL; // Haut de la zone dangereuse selon le côté
 
     const overlap = player.x < hitX + hitW && // Le joueur commence avant la fin de la zone
                     player.x + player.size > hitX && // Et finit après le début de la zone

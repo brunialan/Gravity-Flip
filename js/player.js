@@ -17,6 +17,7 @@ function flipGravity() { // Inverse la gravité du joueur
 } // Fin de la fonction flipGravity
 
 document.addEventListener("keydown", function (event) { // Écoute chaque touche pressée au clavier
+  if (event.repeat) return; // Ignore les répétitions automatiques quand la touche reste enfoncée
   if (event.code === "Space") { // Si la touche est la barre d'espace
     event.preventDefault(); // Empêche la page de défiler vers le bas
     flipGravity(); // Inverse la gravité
@@ -48,7 +49,7 @@ function updatePlayer() { // Met à jour la physique du joueur à chaque image
 } // Fin de la fonction updatePlayer
 
 function drawPlayer() { // Dessine le joueur à chaque image
-  ctx.fillStyle = "cyan"; // Choisit le cyan pour le personnage
+  ctx.fillStyle = "blue"; // Choisit le cyan pour le personnage
   ctx.fillRect(player.x, player.y, player.size, player.size); // Dessine le carré du personnage
 } // Fin de la fonction drawPlayer
 
